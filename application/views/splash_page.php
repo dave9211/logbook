@@ -49,7 +49,7 @@
       <!-- Content of page -->
       <div>
         <!-- Input Form -->
-      <form action="action_page.php" method="post" target="_blank" accept-charset="UTF-8" autocomplete="off">
+      <form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_blank" accept-charset="UTF-8" autocomplete="off">
 
           <!-- Technician's Name List Box-->
           <div>
@@ -62,24 +62,27 @@
              </datalist>
            
           </div>
+
           <!-- Order Number Input Box-->
           <div>
               <label for="order_number">Order Number:</label>
-              <input type="text" id="order_number" placeholder=" XX/0123456789/09.05.2013" 
+              <input type="text" name="order_number" id="order_number" placeholder=" XX/0123456789/09.05.2013" 
               pattern="[\s?[a-zA-Z]{2}/\d{10}\/\d{2}\.\d{2}\.\d{4}" title="XX/0123456789/09.05.2013" required />
           </div>
+          
           <!-- Serial Number Input Box-->
           <div>
               <label for="serial_number">Serial Number:</label>
-              <input type="text" id="serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23" required/>
+              <input type="text" name="serial_number" id="serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23" required/>
           </div>  
 
-          <!-- Submit Button-->
-          <div class="button">
-                  <button type="submit">Send your message</button>
-          </div>
+          <!-- Submit & Continue Button-->
+          <div class="form">
+        <input type="submit" name="submit" value="Continue" style="display:block;margin-left:auto;margin-right:auto;height:30px;min-width:20%;" />
+      </div>
 
           <!-- <input type="submit">-->
        </form>
+
        </div>
 
