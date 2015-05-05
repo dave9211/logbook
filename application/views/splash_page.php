@@ -2,6 +2,21 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Theme example</h1>
-        <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+        <h1>Plinth Build Electronic Logbook Trial</h1>
+        <p>Please begin by entering the Order Number and Serial Number for this order and press Continue</p>
       </div>
+
+      <!-- Define the sections of the page  -->
+      <style>
+        #main_body {
+        width 350px;
+        float:left;
+        padding:50px; }
+      </style>
+
+
+      <!-- Content of page -->
+      <div id="main_body">
+        Example text in my new section
+      </div>
+
