@@ -34,7 +34,8 @@ public function __construct()
 	 */
 	public function index()
 	{
-		$this->load->view('header');
+		$page["page"]=0;
+		$this->load->view('header',$page);
 		$this->load->view('splash_page');
 		$this->load->view('footer');
 	}
@@ -42,7 +43,8 @@ public function __construct()
 
 	public function logbook_page1()
 	{
-		$this->load->view('header');
+		$page["page"]=1;
+		$this->load->view('header',$page);
 		$this->load->view('logbook_page1');
 		$this->load->view('footer');
 	}
@@ -50,12 +52,22 @@ public function __construct()
 
 
 	public function pass_initial_details(){
-		$this->user->initial_details_insert();
+		$record_number = $this->user->initial_details_insert();
+
+		$page["page"]=1;
+		$this->load->view('header',$page);
+		$this->load->view('logbook_page1', $record_number);
+		$this->load->view('footer');
+	}
+
+	public function pass_page2(){
+		return $this->user->page2_insert();
+
 		/*$this->load->view('header');
 		$this->load->view('logbook_page1');
 		$this->load->view('footer');*/
-
 	}
+
 /*
 	public function database()
 	{

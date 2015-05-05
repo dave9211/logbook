@@ -49,9 +49,10 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
           <!--Home button-->
-            <li class="active"><a href="<?php echo site_url('main_site/');?>">Home</a></li>
+
+            <li <?php if ($page==0) echo "class ='active'";?>><a href="<?php echo site_url('main_site/');?>">Home</a></li>
           <!--Page 1 Button-->
-            <li><a href="<?php echo site_url('main_site/logbook_page1');?>">Logbook Page 1</a></li>
+            <li <?php if ($page==1) echo "class ='active'";?>><a href="<?php echo site_url('main_site/logbook_page1');?>">Logbook Page 1</a></li>
           <!--Page 2 Button-->
             <li><a href="<?php echo site_url('main_site/logbook_page2');?>">Logbook Page 2</a></li>
           <!--Dropdown Menu  -->

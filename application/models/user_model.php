@@ -19,7 +19,39 @@ class User_model extends CI_Model {
     		'order_number'=>$order_number,
     		'serial_number'=>$serial_number
     		);
-
+    	/*Insert the posted form data into the table*/
+    	$this->db->trans_start();
     	$this->db->insert('test_table',$data);
+    	$this->db->trans_complete();
+    	/*Record the insert id of this operation, so we can add to this row entry on further pages*/
+    	$record_number = $this->db->insert_id();
+    	
+	}
+
+
+	public function page2_insert()
+    {
+    	$record_number=$this->input->post('record_number');
+    	$extra_field=$this->input->post('extra_field');
+    	/*$order_number=$this->input->post('order_number');
+    	$serial_number=$this->input->post('serial_number');*/
+
+    	$data = array(
+    		'extra_field'=>$extra_field/*,
+    		'order_number'=>$order_number,
+    		'serial_number'=>$serial_number*/
+    		);
+    	$this->db->trans_start();
+    	$this->db->where("record_number", $record_number);
+    	$this->db->update("test_table",$data);
+
+    	/*$this->db->insert('test_table',$data);*/
+    	$this->db->trans_complete();
+    	return $insert_id();
+    	
 	}
 }
+
+/*  //display success message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Employee details added to Database!!!</div>');
+            redirect('employee/index');*/
