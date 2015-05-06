@@ -25,7 +25,7 @@ class User_model extends CI_Model {
     	$this->db->trans_complete();
     	/*Record the insert id of this operation, so we can add to this row entry on further pages*/
     	$record_number = $this->db->insert_id();
-    	
+    	return $record_number;    	
 	}
 
 
@@ -42,12 +42,11 @@ class User_model extends CI_Model {
     		'serial_number'=>$serial_number*/
     		);
     	$this->db->trans_start();
-    	$this->db->where("record_number", $record_number);
+    	$this->db->where("ID", $record_number);
     	$this->db->update("test_table",$data);
 
     	/*$this->db->insert('test_table',$data);*/
     	$this->db->trans_complete();
-    	return $insert_id();
     	
 	}
 }

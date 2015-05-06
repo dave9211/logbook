@@ -49,7 +49,7 @@
       <!-- Content of page -->
       <div>
         <!-- Input Form -->
-      <form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_blank" accept-charset="UTF-8" autocomplete="off">
+      <form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
 
           <!-- Technician's Name List Box-->
           <div>

@@ -5,7 +5,7 @@
         form {
         /* Just to center the form on the page */
         margin: 0 auto;
-        width: 500px;
+        width: 100%;
         /* To see the outline of the form */
         height: 300px;
         padding: 1em;
@@ -35,6 +35,11 @@
         /* To harmonize the look & feel of text field border */
         border: 1px solid #999;}
 
+        /* Table Styling*/
+        table {
+        	width: 400px;
+        }
+
 
       </style>
 
@@ -43,82 +48,49 @@
       <section>
       <div class="container-fluid">
       		<div class="row-fluid">
-      	<h1>Title for this page</h1>
+      	<h1>Plinth Build Logbook</h1>
+      	<h2>1.1 Pre Assembly</h2>
       	<h4>Some text here...</h4>
       	<br>
-        <!-- Input Form -->
-    <!--<form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_blank" accept-charset="UTF-8" autocomplete="off">-->
-	<form action="<?php echo site_url('main_site/pass_page2');?>" method="post" target="_blank" accept-charset="UTF-8" autocomplete="off">
-          
-		<!-- hidden field for record_number-->
-		<input type="hidden" name="record_number" value=$recordnumber>
-
-          <!-- Technician's Name List Box-->
-          <div>
-              <label for="extra_field">Field 1:</label>
-              <input list="technician_names" name="extra_field" required>
-              <datalist id="technician_names">
-                  <option value="Name 1">
-                  <option value="Name 2">
-                  <option value="Name 3">
-             </datalist>
-           
-          </div>
-
-          <!-- Order Number Input Box-->
-          <div>
-              <label for="order_number">Field 2:</label>
-              <input type="text" name="order_number" id="order_number" placeholder=" XX/0123456789/09.05.2013" />
-          </div>
-          
-          <!-- Serial Number Input Box-->
-          <div>
-              <label for="serial_number">Field 3:</label>
-              <input type="text" name="serial_number" id="serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23"/>
-          </div>  
-
-          <!-- Submit & Continue Button-->
-          <div class="form">
-        <input type="submit" name="submit" value="Continue" style="display:block;margin-left:auto;margin-right:auto;height:30px;min-width:20%;" />
-      </div>
-
-          <!-- <input type="submit">-->
-       </form>
-       </div>
-
-     </div>
-       <br>
-       <br>
-
-	<div class="panel panel-default">
-	  <div class="panel-body">
-    Basic panel example
-
-
-       <!-- Table for examples etc-->
+      	<b>Active Serial Number</b><br>
+      	<input type="text" name="active_serial_number" value="Example" readonly>
+      	<br>
+      	<br>
+       
+        <form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
+       <!-- Table -->
        <div>
           <table class="table table-bordered">
+	          	<colgroup>
+				    <col style="width: 5%;">
+				    <col style="width: 40%;">
+				    <col style="width: 20%;">
+				    <col style="width: 10%;">
+				    <col style="width: 25%;">
+			  	</colgroup>
             <thead>
               <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>TEST</th>
+                <th>TITLE</th>
+                <th>ACTION</th>
+                <th>ENGINEER</th>
+                <th>SUBMIT/OVERWRITE</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td rowspan="2">1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>
-                	<input type="text" name="serial_number" id="serial_number" placeholder=" Input Box Here" required/>
-                </td>
+                <td>1.1.1</td>
+                <td>Cable up PSU Assembly</td>
+                <td><b>Complete?</b><input type="checkbox" name="1.1.1_action" id="1.1.1_action" value="True"></td>
+                <td></td>
+              	<td><input type="submit" name="submit" value="Submit"></td>
               </tr>
               <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@TwBootstrap</td>
+                <td>1.1.2</td>
+                <td>Carry out PSU Assembly Test</td>
+                <td><b>Complete?</b><input type="checkbox" name="1.1.1_action" id="1.1.1_action" value="True"></td>
+                <td></td>
+              	<td><input type="submit" name="submit" value="Submit"></td>
               </tr>
               <tr>
                 <td>2</td>
@@ -134,11 +106,16 @@
             </tbody>
           </table>
         </div>
-  </div>
-</div>
 
-
-       <!-- Progress Bar-->
+        <input list="technician_names" name="technician_name" style="width:200px;" required >
+              <datalist id="technician_names">
+                  <option value="Name 1">
+                  <option value="Name 2">
+                  <option value="Name 3">
+             </datalist>
+		<input type="text" size="10" name="serial_number" id="serial_number" placeholder=" Initials" required>
+	</form>
+       <!-- Progress Bar
       <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="sr-only">60% Complete</span></div>
-      </div>
+      </div>-->
