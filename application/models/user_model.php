@@ -8,6 +8,18 @@ class User_model extends CI_Model {
     }
 
 
+    public function serials_lookup()
+    {
+    	/*$serials_lookup = array(
+    		'serial'=>$serial
+    		);*/
+    	/* Get the serials from the database*/
+    	$this->db->select('serial_number');
+    	$query = $this->db->get('test_table');
+
+    	return $query;
+    }
+
     public function initial_details_insert()
     {
     	$technician_name=$this->input->post('technician_name');

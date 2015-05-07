@@ -34,15 +34,35 @@ public function __construct()
 	 */
 	public function index()
 	{
+		$data['serials'] = $this->user->serials_lookup();
+		/*$i=0;
+		foreach ($serials_dropdown->result_array() as $row)
+    {
+      *echo $row['serial_number'];
+       
+       $temp[$i]= $row['serial_number'];
+       $i = $i+1;
+    }
+	
+	$data = array('test' => $temp);*/
+
+	/*	$data['title'] = "My Real Title";
+		$data['heading'] = "My Real Heading";*/
+
+
 		$page["page"]=0;
 		$this->load->view('header',$page);
-		$this->load->view('splash_page');
+		$this->load->view('splash_page',$data);
 		$this->load->view('footer');
+
 	}
 
 
-	public function logbook_page1()
+	public function logbook_page1($row_ID)
 	{
+		
+
+/*eg this get user -> row_ID ie lookup the row id*/
 		$page["page"]=1;
 		$this->load->view('header',$page);
 		$this->load->view('logbook_page1');
@@ -52,12 +72,12 @@ public function __construct()
 
 
 	public function pass_initial_details(){
-		$record_number = $this->user->initial_details_insert();
-
+		$row_ID = $this->user->initial_details_insert();
 		$page["page"]=1;
-		$this->load->view('header',$page);
+		header("location: <?php echo site_url('main_site/logbook_page1');?>" + $row_ID);
+		/*$this->load->view('header',$page);
 		$this->load->view('logbook_page1', $record_number);
-		$this->load->view('footer');
+		$this->load->view('footer');*/
 	}
 
 	public function pass_page2(){
@@ -97,3 +117,4 @@ public function __construct()
 
 
 }
+?>

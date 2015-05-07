@@ -5,11 +5,13 @@
         form {
         /* Just to center the form on the page */
         margin: 0 auto;
-        width: 500px;
+        width: 800px;
         /* To see the outline of the form */
         padding: 1em;
         border: 1px solid #CCC;
-        border-radius: 1em;}
+        border-radius: 1em; 
+        text-align: center}
+
 
         form div + div {
         /* This adds space between the form widgets */
@@ -19,7 +21,7 @@
         /* To make sure that all label have the same size and are properly aligned */
         display: inline-block;
         width: 200px;
-        text-align: right;}
+        text-align:right;}
 
        input, textarea {
         /* To make sure that all text fields have the same font settings
@@ -34,6 +36,12 @@
         /* To harmonize the look & feel of text field border */
         border: 1px solid #999;}
 
+        /*Centres things*/
+        .object_centre{
+          margin-left:auto; margin-right: auto;
+          display: inline-block;
+        }
+
       </style>
 
 
@@ -43,46 +51,68 @@
         <p>Please begin by entering the Order Number and Serial Number for this order and press Continue</p>
       </div>
 
-     
-
+      
 
       <!-- Content of page -->
       <div>
         <!-- Input Form -->
       <form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
 
-          <!-- Technician's Name List Box-->
-          <div>
-              <label for="technician_name">Technician Name:</label>
-              <input list="technician_names" name="technician_name" required >
-              <datalist id="technician_names">
-                  <option value="Name 1">
-                  <option value="Name 2">
-                  <option value="Name 3">
-             </datalist>
-           
-          </div>
+              <!-- Dropdown of all Serial Numbers in Database-->
+              <div>
+                <label for="existing_serial">Existing Serial:</label>
+                <select name="exisiting_serial" style="width:200px;">
+                    <option value="">--- Select ---</option>
+                              <?php
+                                  foreach($serials->result_array() as $row) { ?>
+                                  <option value="<?= $row['serial_number'] ?>"><?= $row['serial_number'] ?></option>
+                              <?php
+                                } ?>
+                </select>
+              </div>
+              <br>
+              <p> <b> OR </b></p>
+              <br>
 
-          <!-- Order Number Input Box-->
+             <!-- Serial Number Input Box-->
+              <div>
+                  <label for="serial_number">New Serial Number:</label>
+                  <input type="text" class="object_centre" name="serial_number" id="serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23" required/>
+              </div> 
+
+
+
+              <!-- System Type List Box-->
+              <div>
+                  <label for="system_type">System Type:</label>
+                  <select name="system_type" style="width:200px;">
+                      <option value="">--- Select ---</option>
+                      <option value="EVO10">EVO10</option>
+                      <option value="EVO15">EVO15</option>
+                      <option value="EVO25">EVO25</option>
+                      <option value="EVO10HD">EVO10HD</option>
+                      <option value="EVO15HD">EVO15HD</option>
+                      <option value="EVO25HD">EVO25HD</option>
+                      <option value="SIGMA">SIGMA</option>
+                  </select>
+              </div>
+
+              <!--Free comments-->
+              <textarea name="message" rows="10" cols="30">
+              The cat was playing in the garden.
+              </textarea>
+
+          <!-- Submit & Continue Button-->
+          <div class="form">
+        <input type="submit" name="submit" value="Continue" class="btn btn-info object_centre" />
+       </div>
+
+       </form>
+       </div>
+
+<!-- Order Number Input Box
           <div>
               <label for="order_number">Order Number:</label>
               <input type="text" name="order_number" id="order_number" placeholder=" XX/0123456789/09.05.2013" 
               pattern="[\s?[a-zA-Z]{2}/\d{10}\/\d{2}\.\d{2}\.\d{4}" title="XX/0123456789/09.05.2013" required />
-          </div>
-          
-          <!-- Serial Number Input Box-->
-          <div>
-              <label for="serial_number">Serial Number:</label>
-              <input type="text" name="serial_number" id="serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23" required/>
-          </div>  
-
-          <!-- Submit & Continue Button-->
-          <div class="form">
-        <input type="submit" name="submit" value="Continue" style="display:block;margin-left:auto;margin-right:auto;height:30px;min-width:20%;" />
-      </div>
-
-          <!-- <input type="submit">-->
-       </form>
-
-       </div>
-
+          </div>-->

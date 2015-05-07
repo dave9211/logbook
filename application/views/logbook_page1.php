@@ -28,9 +28,9 @@
         font: 1em sans-serif;
 
         /* To give the same size to all text field */
-        width: 200px;
+       /* width: 200px;
         -moz-box-sizing: border-box;
-        box-sizing: border-box;
+        box-sizing: border-box;*/
 
         /* To harmonize the look & feel of text field border */
         border: 1px solid #999;}
@@ -39,7 +39,14 @@
         table {
         	width: 400px;
         }
+        .inits_box{
+        	width:90px;
+        }
 
+        .centre_button{
+        	margin-left:auto; margin-right: auto;
+        	display: block;
+        }
 
       </style>
 
@@ -81,9 +88,9 @@
               <tr>
                 <td>1.1.1</td>
                 <td>Cable up PSU Assembly</td>
-                <td><b>Complete?</b><input type="checkbox" name="1.1.1_action" id="1.1.1_action" value="True"></td>
-                <td></td>
-              	<td><input type="submit" name="submit" value="Submit"></td>
+                <td><b>Complete?</b><div class="checkbox"><label><input type="checkbox" name="1.1.1_action" id="1.1.1_action" value="True">Option 1</label></div></td>
+                <td><input type="text" class="inits_box" name="serial_number" id="serial_number" placeholder=" Initials" required></td>
+              	<td><input type="submit" name="submit" class="btn btn-info centre_button" value="Submit"></td>
               </tr>
               <tr>
                 <td>1.1.2</td>
@@ -113,7 +120,7 @@
                   <option value="Name 2">
                   <option value="Name 3">
              </datalist>
-		<input type="text" size="10" name="serial_number" id="serial_number" placeholder=" Initials" required>
+		
 	</form>
        <!-- Progress Bar
       <div class="progress">
