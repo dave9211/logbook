@@ -45,14 +45,15 @@ public function __construct()
 	}
 
 
-	public function logbook_page1($row_ID)
+	public function logbook_page1($url_serial)
 	{
-		
+		/*echo $url_serial;*/
+		/*Collects the record of the serial number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_serial);
 
-/*eg this get user -> row_ID ie lookup the row id*/
 		$page["page"]=1;
 		$this->load->view('header',$page);
-		$this->load->view('logbook_page1');
+		$this->load->view('logbook_page1',$record_data);
 		$this->load->view('footer');
 	}
 
@@ -69,7 +70,7 @@ public function __construct()
 
 		/*An existing Serial has been selected from the dropdown - load that record*/
 		if($existing_serial != ""){
-					$path = site_url('main_site/logbook_page1/') + $existing_serial;
+					$path = site_url('main_site/logbook_page1/') ."/" .$existing_serial;
 					header("location:".$path);
 		}
 
@@ -84,7 +85,8 @@ public function __construct()
 						echo "loc2";
 					/*Create record and return the new serial number*/
 					$new_id = $this->user->new_record();
-					header("location: <?php echo site_url('main_site/logbook_page1/');?>" + $new_id);
+					$path = site_url('main_site/logbook_page1/') ."/" .$new_id;
+					header("location:".$path);
 					}
 				}
 		}

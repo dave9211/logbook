@@ -50,6 +50,8 @@
 
       </style>
 
+	<!--This line turns the 1row SQL result into an array that we can reference in the body of the page-->
+	<?php $record_row = $records->row_array();?>
 
 <!-- Content of page -->
       <section>
@@ -60,7 +62,12 @@
       	<h4>Some text here...</h4>
       	<br>
       	<b>Active Serial Number</b><br>
-      	<input type="text" name="active_serial_number" value="Example" readonly>
+
+
+      				
+
+
+      	<input type="text" name="active_serial_number" value="<?php echo $record_row['serial_number'];?>" readonly>
       	<br>
       	<br>
        

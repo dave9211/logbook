@@ -48,7 +48,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Plinth Build Electronic Logbook Trial</h1>
-        <p>Please begin by entering the Order Number and Serial Number for this order and press Continue</p>
+        <p>Begin by entering a new serial sumber & system type, or select an existing job below</p>
       </div>
 
       
@@ -61,7 +61,7 @@
               <!-- Dropdown of all Serial Numbers in Database-->
               <div>
                 <label for="existing_serial">Existing Serial:</label>
-                <select name="exisiting_serial" style="width:200px;" onchange="document.location.href='<?php echo site_url('logbook_page_1/');?>'+this[selectedIndex].value">
+                <select name="exisiting_serial" style="width:200px;" onchange="document.location.href='<?php echo site_url('main_site/logbook_page1/');?><?php echo "/";?>'+this[selectedIndex].value">
                     <option selected="selected" value="">--- Select ---</option>
                               <?php
                                   foreach($serials->result_array() as $row) { ?>
@@ -96,11 +96,11 @@
                       <option value="SIGMA">SIGMA</option>
                   </select>
               </div>
-
-              <!--Free comments-->
+              <br>
+              <!--Free comments
               <textarea name="message" rows="10" cols="30">
               The cat was playing in the garden.
-              </textarea>
+              </textarea>-->
 
           <!-- Submit & Continue Button-->
           <div class="form">
