@@ -56,13 +56,13 @@
       <!-- Content of page -->
       <div>
         <!-- Input Form -->
-      <form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
+      <form action="<?php echo site_url('main_site/splash_page_continue');?>" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
 
               <!-- Dropdown of all Serial Numbers in Database-->
               <div>
                 <label for="existing_serial">Existing Serial:</label>
-                <select name="exisiting_serial" style="width:200px;">
-                    <option value="">--- Select ---</option>
+                <select name="exisiting_serial" style="width:200px;" onchange="document.location.href='<?php echo site_url('logbook_page_1/');?>'+this[selectedIndex].value">
+                    <option selected="selected" value="">--- Select ---</option>
                               <?php
                                   foreach($serials->result_array() as $row) { ?>
                                   <option value="<?= $row['serial_number'] ?>"><?= $row['serial_number'] ?></option>
@@ -76,16 +76,16 @@
 
              <!-- Serial Number Input Box-->
               <div>
-                  <label for="serial_number">New Serial Number:</label>
-                  <input type="text" class="object_centre" name="serial_number" id="serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23" required/>
+                  <label for="new_serial_number">New Serial Number:</label>
+                  <input type="text" class="object_centre" name="new_serial_number" value="" id="new_serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23">
               </div> 
 
 
 
               <!-- System Type List Box-->
               <div>
-                  <label for="system_type">System Type:</label>
-                  <select name="system_type" style="width:200px;">
+                  <label for="new_system_type">System Type:</label>
+                  <select name="new_system_type" style="width:200px;">
                       <option value="">--- Select ---</option>
                       <option value="EVO10">EVO10</option>
                       <option value="EVO15">EVO15</option>

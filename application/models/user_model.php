@@ -20,24 +20,23 @@ class User_model extends CI_Model {
     	return $query;
     }
 
-    public function initial_details_insert()
+    public function new_record()
     {
-    	$technician_name=$this->input->post('technician_name');
-    	$order_number=$this->input->post('order_number');
-    	$serial_number=$this->input->post('serial_number');
+    	$new_serial_number=$this->input->post('new_serial_number');
+    	$new_system_type=$this->input->post('new_system_type');
 
     	$data = array(
-    		'technician_name'=>$technician_name,
-    		'order_number'=>$order_number,
-    		'serial_number'=>$serial_number
+    		'new_serial_number'=>$new_serial_number,
+    		'new_system_type'=>$new_system_type
     		);
+
     	/*Insert the posted form data into the table*/
     	$this->db->trans_start();
     	$this->db->insert('test_table',$data);
     	$this->db->trans_complete();
-    	/*Record the insert id of this operation, so we can add to this row entry on further pages*/
-    	$record_number = $this->db->insert_id();
-    	return $record_number;    	
+    	/*Record the insert id of this operation, so we can add to this row entry on further pages    	$record_number = $this->db->insert_id();
+    	return $record_number;*/
+    	return $new_serial_number;
 	}
 
 

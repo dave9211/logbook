@@ -34,22 +34,9 @@ public function __construct()
 	 */
 	public function index()
 	{
+		/*This retrieves the serial numbers from the database so they can be passed to the splash page*/
 		$data['serials'] = $this->user->serials_lookup();
-		/*$i=0;
-		foreach ($serials_dropdown->result_array() as $row)
-    {
-      *echo $row['serial_number'];
-       
-       $temp[$i]= $row['serial_number'];
-       $i = $i+1;
-    }
-	
-	$data = array('test' => $temp);*/
-
-	/*	$data['title'] = "My Real Title";
-		$data['heading'] = "My Real Heading";*/
-
-
+		/*For the navbar, so it knows to highlight the home page*/
 		$page["page"]=0;
 		$this->load->view('header',$page);
 		$this->load->view('splash_page',$data);
@@ -71,16 +58,39 @@ public function __construct()
 
 
 
-	public function pass_initial_details(){
-		$row_ID = $this->user->initial_details_insert();
-		$page["page"]=1;
-		header("location: <?php echo site_url('main_site/logbook_page1');?>" + $row_ID);
-		/*$this->load->view('header',$page);
-		$this->load->view('logbook_page1', $record_number);
-		$this->load->view('footer');*/
-	}
+	public function splash_page_continue(){
 
-	public function pass_page2(){
+		$existing_serial = $this->input->post('existing_serial');
+		$new_serial_number = $this->input->post('new_serial_number');
+		$new_system_type = $this->input->post('new_system_type');
+		echo $existing_serial;
+		echo $new_serial_number;
+		echo $new_system_type;
+
+		/*An existing Serial has been selected from the dropdown - load that record*/
+		if($existing_serial != ""){
+					$path = site_url('main_site/logbook_page1/') + $existing_serial;
+					header("location:".$path);
+		}
+
+			/*Neither an exising serial has been selected, nor a new one has been entered, just reload the splashpage*/
+			else{
+				if($new_serial_number == ""){
+					$path = site_url('main_site/');
+					header("location:".$path);
+				}
+					/*No existing serial number selected, but a new one's been entered - create a new record and go to that page*/
+					else{
+						echo "loc2";
+					/*Create record and return the new serial number*/
+					$new_id = $this->user->new_record();
+					header("location: <?php echo site_url('main_site/logbook_page1/');?>" + $new_id);
+					}
+				}
+		}
+
+		
+		public function pass_page2(){
 		return $this->user->page2_insert();
 
 		/*$this->load->view('header');
