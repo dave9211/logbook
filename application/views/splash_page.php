@@ -96,6 +96,12 @@
                       <option value="SIGMA">SIGMA</option>
                   </select>
               </div>
+
+              <!--Initials-->
+              <div>
+                <label for="initials">Technician's Initials:</label>
+                <input type="text" class="inits_box" name="initials" id="initials" placeholder=" Initials" required>
+              </div>
               <br>
               <!--Free comments
               <textarea name="message" rows="10" cols="30">
