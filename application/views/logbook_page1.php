@@ -33,19 +33,21 @@
         box-sizing: border-box;*/
 
         /* To harmonize the look & feel of text field border */
-        border: 1px solid #999;}
+        border: 1px solid #999;
+        width: 70px;}
 
         /* Table Styling*/
         table {
         	width: 400px;
+          text-align: center;
         }
-        .inits_box{
-        	width:90px;
-        }
-
         .centre_button{
         	margin-left:auto; margin-right: auto;
         	display: block;
+        }
+
+        .serial_box{
+          width: 150px;
         }
 
       </style>
@@ -78,8 +80,8 @@
 	          	<colgroup>
 				    <col style="width: 5%;">
 				    <col style="width: 40%;">
-				    <col style="width: 20%;">
-				    <col style="width: 10%;">
+				    <col style="width: 25%;">
+				    <col style="width: 5%;">
 				    <col style="width: 25%;">
 			  	</colgroup>
             <thead>
@@ -88,45 +90,34 @@
                 <th>TITLE</th>
                 <th>ACTION</th>
                 <th>ENGINEER</th>
-                <th>SUBMIT/OVERWRITE</th>
+                <th>SUBMIT</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1.1.1</td>
                 <td>Cable up PSU Assembly</td>
-                <td><b>Complete?</b><div class="checkbox"><label><input type="checkbox" name="1.1.1_action" id="1.1.1_action" value="True">Option 1</label></div></td>
-                <td><input type="text" class="inits_box" name="serial_number" id="serial_number" placeholder=" Initials" required></td>
+                <td><b>Complete?</b><input type="checkbox" name="1.1.1" id="1.1.1" value=" <?php echo $record_row['1.1.1'];?>"></td>
+                <td><input type="text" class="object_centre" name="1.1.1_inits" id="1.1.1_inits" value=" <?php echo $record_row['1.1.1_inits'];?>"></td>
               	<td><input type="submit" name="submit" class="btn btn-info centre_button" value="Submit"></td>
               </tr>
               <tr>
                 <td>1.1.2</td>
                 <td>Carry out PSU Assembly Test</td>
-                <td><b>Complete?</b><input type="checkbox" name="1.1.1_action" id="1.1.1_action" value="True"></td>
-                <td></td>
-              	<td><input type="submit" name="submit" value="Submit"></td>
+                <td><b>Complete?</b><input type="checkbox" name="1.1.2" id="1.1.2" value="True" value=" <?php echo $record_row['1.1.1'];?>"></td>
+                <td><input type="text" class="object_centre" name="1.1.2_inits" id="1.1.2_inits" value=" <?php echo $record_row['1.1.2_inits'];?>"></td>
+              	<td><input type="submit" name="submit" class="btn btn-info centre_button" value="Submit"></td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <td>1.1.3</td>
+                <td>Record power supply number</td>
+                <td><input type="text" class="object_centre serial_box" name="1.1.3" value="" id="1.1.3" placeholder="" ></td>
+                <td><input type="text" class="object_centre" name="1.1.3_inits" id="1.1.3_inits" value=" <?php echo $record_row['1.1.3_inits'];?>"</td>
+                <td><input type="submit" name="submit" class="btn btn-info centre_button" value="Submit"></td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <input list="technician_names" name="technician_name" style="width:200px;" required >
-              <datalist id="technician_names">
-                  <option value="Name 1">
-                  <option value="Name 2">
-                  <option value="Name 3">
-             </datalist>
 		
 	</form>
        <!-- Progress Bar
