@@ -78,14 +78,41 @@ public function __construct()
 
 	public function logbook_page1($url_serial)
 	{
-		/*echo $url_serial;*/
-		/*Collects the record of the serial number defined in the page's url*/
-		$record_data['records'] = $this->user->get_data($url_serial);
+		//Run this code if the user has just pressed submit
+		if($this->input->post("submit"))
+		{
+			//Format the data for the update_info function
+			$data_to_update = array(
+				"1.1.1" => array(
+					"value" => $this->input->post("1.1.1"),
+					"_inits" => $this->input->post("1.1.1_inits")
+				),
+				"1.1.2" => array(
+					"value" => $this->input->post("1.1.2"),
+					"_inits" => $this->input->post("1.1.2_inits")
+				),
+				"1.1.3" => array(
+					"value" => $this->input->post("1.1.3"),
+					"_inits" => $this->input->post("1.1.3_inits")
+				)
+			);
 
-		$page["page"]=1;
-		$this->load->view('header',$page);
-		$this->load->view('logbook_page1',$record_data);
-		$this->load->view('footer');
+			//Run the function
+			$this->user->update_info($url_serial, $data_to_update);
+
+			//Redirect to Page 2
+			header("Location: ".site_url('main_site/logbook_page2/') ."/" .$url_serial);
+		}
+		else {
+			/*echo $url_serial;*/
+			/*Collects the record of the serial number defined in the page's url*/
+			$record_data['records'] = $this->user->get_data($url_serial);
+
+			$page["page"]=1;
+			$this->load->view('header',$page);
+			$this->load->view('logbook_page1',$record_data);
+			$this->load->view('footer');
+		}
 	}
 
 /*

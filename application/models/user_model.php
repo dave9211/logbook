@@ -87,6 +87,32 @@ class User_model extends CI_Model {
         $this->db->insert("change_log", $data_to_insert);
         return $this->db->insert_id();
     }
+
+    public function update_info($url_serial, $data_to_insert)
+    {
+        //Get the row id
+        $this->db->where('serial_number',$url_serial);
+        $query = $this->db->get('tb_logbook');
+        $result = $query->row_array;
+        $row_id = $result["ID"];
+
+        //Initialise empty array that will hold the data used to update the tb_logbook table
+        $data_formatted_for_update = array();
+
+        foreach ($data_to_insert as $field => $value) {
+            //Add each change to the change log
+            $this->add_to_change_log($row_id, $value["_inits"], $field, $value["value"]);
+
+            //Re-format incoming data for the db->update function below
+            $data_formatted_for_update[$field] = $value["value"];
+            $data_formatted_for_update[$field."_inits"] = $value["_inits"];
+        }
+
+        //Update the tb_logbook table using the re-formatted data
+        $this->db->where('serial_number',$url_serial);
+        $this->db->update('tb_logbook', $data_formatted_for_update);
+
+    }
 }
 
 /*  //display success message

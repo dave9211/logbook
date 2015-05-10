@@ -73,7 +73,7 @@
       	<br>
       	<br>
        
-        <form action="<?php echo site_url('main_site/pass_initial_details');?>" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
+        <form action="" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
        <!-- Table -->
        <div>
           <table class="table table-bordered">
