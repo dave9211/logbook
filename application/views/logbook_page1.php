@@ -93,22 +93,22 @@
             </thead>
             <tbody>
               <tr>
-                <td>1.1.1</td>
+                <td>1_1_1</td>
                 <td>Cable up PSU Assembly</td>
-                <td><b>Complete?</b><input type="checkbox" name="1.1.1" id="1.1.1" <?php if($record_row['1.1.1']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1.1.1_inits" id="1.1.1_inits" value=" <?php echo $record_row['1.1.1_inits'];?>"></td>
+                <td><b>Complete?</b><input type="checkbox" name="1_1_1" id="1_1_1" value="1" <?php if($record_row['1_1_1']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_1_1_inits" id="1_1_1_inits" value="<?php echo $record_row['1_1_1_inits'];?>"></td>
               </tr>
               <tr>
-                <td>1.1.2</td>
+                <td>1_1_2</td>
                 <td>Carry out PSU Assembly Test</td>
-                <td><b>Complete?</b><input type="checkbox" name="1.1.2" id="1.1.2" <?php if($record_row['1.1.2']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1.1.2_inits" id="1.1.2_inits" value=" <?php echo $record_row['1.1.2_inits'];?>"></td>
+                <td><b>Complete?</b><input type="checkbox" name="1_1_2" id="1_1_2" value="1" <?php if($record_row['1_1_2']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_1_2_inits" id="1_1_2_inits" value="<?php echo $record_row['1_1_2_inits'];?>"</td>
               </tr>
               <tr>
-                <td>1.1.3</td>
+                <td>1_1_3</td>
                 <td>Record power supply number</td>
-                <td><input type="text" class="object_centre serial_box" name="1.1.3" value="<?php echo $record_row['1.1.3'];?>" id="1.1.3" placeholder="" ></td>
-                <td><input type="text" class="object_centre" name="1.1.3_inits" id="1.1.3_inits" value=" <?php echo $record_row['1.1.3_inits'];?>"</td>
+                <td><input type="text" class="object_centre serial_box" name="1_1_3" value="<?php echo $record_row['1_1_3'];?>" id="1_1_3" placeholder="" ></td>
+                <td><input type="text" class="object_centre" name="1_1_3_inits" id="1_1_3_inits" value="<?php echo $record_row['1_1_3_inits'];?>"</td>
               </tr>
             </tbody>
           </table>

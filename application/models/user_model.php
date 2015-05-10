@@ -93,7 +93,7 @@ class User_model extends CI_Model {
         //Get the row id
         $this->db->where('serial_number',$url_serial);
         $query = $this->db->get('tb_logbook');
-        $result = $query->row_array;
+        $result = $query->row_array();
         $row_id = $result["ID"];
 
         //Initialise empty array that will hold the data used to update the tb_logbook table
@@ -101,11 +101,14 @@ class User_model extends CI_Model {
 
         foreach ($data_to_insert as $field => $value) {
             //Add each change to the change log
-            $this->add_to_change_log($row_id, $value["_inits"], $field, $value["value"]);
+            if($value["inits"]=="") $inits = "anon";
+            else $inits = $value["inits"];
+
+            $this->add_to_change_log($row_id, $inits, $field, $value["value"]);
 
             //Re-format incoming data for the db->update function below
             $data_formatted_for_update[$field] = $value["value"];
-            $data_formatted_for_update[$field."_inits"] = $value["_inits"];
+            $data_formatted_for_update[$field."_inits"] = $value["inits"];
         }
 
         //Update the tb_logbook table using the re-formatted data
