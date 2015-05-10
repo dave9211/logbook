@@ -44,21 +44,6 @@ public function __construct()
 
 	}
 
-
-	public function logbook_page1($url_serial)
-	{
-		/*echo $url_serial;*/
-		/*Collects the record of the serial number defined in the page's url*/
-		$record_data['records'] = $this->user->get_data($url_serial);
-
-		$page["page"]=1;
-		$this->load->view('header',$page);
-		$this->load->view('logbook_page1',$record_data);
-		$this->load->view('footer');
-	}
-
-
-
 	public function splash_page_continue(){
 
 		$existing_serial = $this->input->post('existing_serial');
@@ -75,29 +60,32 @@ public function __construct()
 		}
 
 			/*Neither an exising serial has been selected, nor a new one has been entered, just reload the splashpage*/
-			else{
-				if($new_serial_number == ""){
-					$path = site_url('main_site/');
-					header("location:".$path);
-				}
-					/*No existing serial number selected, but a new one's been entered - create a new record and go to that page*/
-					else{
-						echo "loc2";
-					/*Create record and return the new serial number*/
-					$new_id = $this->user->new_record();
-					$path = site_url('main_site/logbook_page1/') ."/" .$new_id;
-					header("location:".$path);
-					}
+		else{
+			if($new_serial_number == ""){
+				$path = site_url('main_site/');
+				header("location:".$path);
+			}
+				/*No existing serial number selected, but a new one's been entered - create a new record and go to that page*/
+				else{
+					echo "loc2";
+				/*Create record and return the new serial number*/
+				$new_id = $this->user->new_record();
+				$path = site_url('main_site/logbook_page1/') ."/" .$new_id;
+				header("location:".$path);
 				}
 		}
+	}
 
-		
-		public function pass_page2(){
-		return $this->user->page2_insert();
+	public function logbook_page1($url_serial)
+	{
+		/*echo $url_serial;*/
+		/*Collects the record of the serial number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_serial);
 
-		/*$this->load->view('header');
-		$this->load->view('logbook_page1');
-		$this->load->view('footer');*/
+		$page["page"]=1;
+		$this->load->view('header',$page);
+		$this->load->view('logbook_page1',$record_data);
+		$this->load->view('footer');
 	}
 
 /*

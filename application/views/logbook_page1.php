@@ -95,19 +95,19 @@
               <tr>
                 <td>1.1.1</td>
                 <td>Cable up PSU Assembly</td>
-                <td><b>Complete?</b><input type="checkbox" name="1.1.1" id="1.1.1" value=" <?php echo $record_row['1.1.1'];?>"></td>
+                <td><b>Complete?</b><input type="checkbox" name="1.1.1" id="1.1.1" <?php if($record_row['1.1.1']==1) echo 'checked="checked"';?>></td>
                 <td><input type="text" class="object_centre" name="1.1.1_inits" id="1.1.1_inits" value=" <?php echo $record_row['1.1.1_inits'];?>"></td>
               </tr>
               <tr>
                 <td>1.1.2</td>
                 <td>Carry out PSU Assembly Test</td>
-                <td><b>Complete?</b><input type="checkbox" name="1.1.2" id="1.1.2" value="True" value=" <?php echo $record_row['1.1.1'];?>"></td>
+                <td><b>Complete?</b><input type="checkbox" name="1.1.2" id="1.1.2" <?php if($record_row['1.1.2']==1) echo 'checked="checked"';?>></td>
                 <td><input type="text" class="object_centre" name="1.1.2_inits" id="1.1.2_inits" value=" <?php echo $record_row['1.1.2_inits'];?>"></td>
               </tr>
               <tr>
                 <td>1.1.3</td>
                 <td>Record power supply number</td>
-                <td><input type="text" class="object_centre serial_box" name="1.1.3" value="" id="1.1.3" placeholder="" ></td>
+                <td><input type="text" class="object_centre serial_box" name="1.1.3" value="<?php echo $record_row['1.1.3'];?>" id="1.1.3" placeholder="" ></td>
                 <td><input type="text" class="object_centre" name="1.1.3_inits" id="1.1.3_inits" value=" <?php echo $record_row['1.1.3_inits'];?>"</td>
               </tr>
             </tbody>
