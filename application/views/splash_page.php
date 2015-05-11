@@ -99,7 +99,7 @@
 
               <!--Initials-->
               <div>
-                <label for="initials">Technician's Initials:</label>
+                <label for="initials">Engineer's Initials:</label>
                 <input type="text" class="inits_box" name="initials" id="initials" placeholder=" Initials" required>
               </div>
               <br>

@@ -99,9 +99,6 @@ public function __construct()
 
 			//Run the function
 			$this->user->update_info($url_serial, $data_to_update);
-
-			//Redirect to Page 2
-			//header("Location: ".site_url('main_site/logbook_page2/') ."/" .$url_serial);
 		}
 		/*echo $url_serial;*/
 		/*Collects the record of the serial number defined in the page's url*/
@@ -123,19 +120,75 @@ public function __construct()
 		{
 			//Format the data for the update_info function
 			$data_to_update = array(
-				"1_1_1" => array(
-					"value" => $this->input->post("1_1_1") ? "1" : "0",
-					"inits" => $this->input->post("1_1_1_inits")
+				"1_2_1" => array(
+					"value" => $this->input->post("1_2_1") ? "1" : "0",
+					"inits" => $this->input->post("1_2_1_inits")
 				),
-				"1_1_2" => array(
-					"value" => $this->input->post("1_1_2") ? "1" : "0",
-					"inits" => $this->input->post("1_1_2_inits")
+				"1_2_2" => array(
+					"value" => $this->input->post("1_2_2") ? "1" : "0",
+					"inits" => $this->input->post("1_2_2_inits")
 				),
-				"1_1_3" => array(
-					"value" => $this->input->post("1_1_3"),
-					"inits" => $this->input->post("1_1_3_inits")
+				"1_2_3" => array(
+					"value" => $this->input->post("1_2_3") ? "1" : "0",
+					"inits" => $this->input->post("1_2_3_inits")
+				),
+				"1_2_4_stage" => array(
+					"value" => $this->input->post("1_2_4_stage"),
+					"inits" => $this->input->post("1_2_4_stage_inits")
+				),
+				"1_2_4_vac" => array(
+					"value" => $this->input->post("1_2_4_vac"),
+					"inits" => $this->input->post("1_2_4_vac_inits")
+				),
+				"1_2_4_eo" => array(
+					"value" => $this->input->post("1_2_4_eo"),
+					"inits" => $this->input->post("1_2_4_eo_inits")
+				),
+				"1_2_4_turbo" => array(
+					"value" => $this->input->post("1_2_4_turbo"),
+					"inits" => $this->input->post("1_2_4_turbo_inits")
+				),
+				"1_2_4_scan" => array(
+					"value" => $this->input->post("1_2_4_scan"),
+					"inits" => $this->input->post("1_2_4_scan_inits")
+				),
+				"1_2_5" => array(
+					"value" => $this->input->post("1_2_5") ? "1" : "0",
+					"inits" => $this->input->post("1_2_5_inits")
+				),
+				"1_2_6" => array(
+					"value" => $this->input->post("1_2_6") ? "1" : "0",
+					"inits" => $this->input->post("1_2_6_inits")
+				),
+				"1_2_7" => array(
+					"value" => $this->input->post("1_2_7") ? "1" : "0",
+					"inits" => $this->input->post("1_2_7_inits")
+				),
+				"1_2_8" => array(
+					"value" => $this->input->post("1_2_8") ? "1" : "0",
+					"inits" => $this->input->post("1_2_8_inits")
+				),
+				"1_2_9" => array(
+					"value" => $this->input->post("1_2_9") ? "1" : "0",
+					"inits" => $this->input->post("1_2_9_inits")
+				),
+				"1_2_10" => array(
+					"value" => $this->input->post("1_2_10") ? "1" : "0",
+					"inits" => $this->input->post("1_2_10_inits")
+				),
+				"1_2_11" => array(
+					"value" => $this->input->post("1_2_11") ? "1" : "0",
+					"inits" => $this->input->post("1_2_11_inits")
+				),
+				"1_2_12" => array(
+					"value" => $this->input->post("1_2_12") ? "1" : "0",
+					"inits" => $this->input->post("1_2_12_inits")
+				),
+				"1_2_13" => array(
+					"value" => $this->input->post("1_2_13") ? "1" : "0",
+					"inits" => $this->input->post("1_2_13_inits")
 				)
-			);
+				);
 
 			//Run the function
 			$this->user->update_info($url_serial, $data_to_update);
@@ -162,18 +215,82 @@ public function logbook_page3($url_serial)
 		{
 			//Format the data for the update_info function
 			$data_to_update = array(
-				"1_1_1" => array(
-					"value" => $this->input->post("1_1_1") ? "1" : "0",
-					"inits" => $this->input->post("1_1_1_inits")
+				"1_3_1" => array(
+					"value" => $this->input->post("1_3_1") ? "1" : "0",
+					"inits" => $this->input->post("1_3_1_inits")
 				),
-				"1_1_2" => array(
-					"value" => $this->input->post("1_1_2") ? "1" : "0",
-					"inits" => $this->input->post("1_1_2_inits")
+				"1_3_2" => array(
+					"value" => $this->input->post("1_3_2") ? "1" : "0",
+					"inits" => $this->input->post("1_3_2_inits")
 				),
-				"1_1_3" => array(
-					"value" => $this->input->post("1_1_3"),
-					"inits" => $this->input->post("1_1_3_inits")
-				)
+				"1_3_3" => array(
+					"value" => $this->input->post("1_3_3") ? "1" : "0",
+					"inits" => $this->input->post("1_3_3_inits")
+				),
+				"1_3_4" => array(
+					"value" => $this->input->post("1_3_4") ? "1" : "0",
+					"inits" => $this->input->post("1_3_4_inits")
+				),
+				"1_3_5" => array(
+					"value" => $this->input->post("1_3_5") ? "1" : "0",
+					"inits" => $this->input->post("1_3_5_inits")
+				),
+				"1_3_6" => array(
+					"value" => $this->input->post("1_3_6") ? "1" : "0",
+					"inits" => $this->input->post("1_3_6_inits")
+				),
+				"1_3_7" => array(
+					"value" => $this->input->post("1_3_7") ? "1" : "0",
+					"inits" => $this->input->post("1_3_7_inits")
+				),
+				"1_3_8" => array(
+					"value" => $this->input->post("1_3_8"),
+					"inits" => $this->input->post("1_3_8_inits")
+				),
+				"1_3_9" => array(
+					"value" => $this->input->post("1_3_9") ? "1" : "0",
+					"inits" => $this->input->post("1_3_9_inits")
+				),
+				"1_3_10" => array(
+					"value" => $this->input->post("1_3_10") ? "1" : "0",
+					"inits" => $this->input->post("1_3_10_inits")
+				),
+				"1_3_11" => array(
+					"value" => $this->input->post("1_3_11"),
+					"inits" => $this->input->post("1_3_11_inits")
+				),
+				"1_3_12" => array(
+					"value" => $this->input->post("1_3_12") ? "1" : "0",
+					"inits" => $this->input->post("1_3_2_inits")
+				),
+				"1_3_13" => array(
+					"value" => $this->input->post("1_3_13") ? "1" : "0",
+					"inits" => $this->input->post("1_3_13_inits")
+				),
+				"1_3_14" => array(
+					"value" => $this->input->post("1_3_14") ? "1" : "0",
+					"inits" => $this->input->post("1_3_14_inits")
+				),
+				"1_3_15" => array(
+					"value" => $this->input->post("1_3_15") ? "1" : "0",
+					"inits" => $this->input->post("1_3_15_inits")
+				),
+				"1_3_16" => array(
+					"value" => $this->input->post("1_3_16") ? "1" : "0",
+					"inits" => $this->input->post("1_3_16_inits")
+				),
+				"1_3_17" => array(
+					"value" => $this->input->post("1_3_17") ? "1" : "0",
+					"inits" => $this->input->post("1_3_17_inits")
+				),
+				"1_3_18" => array(
+					"value" => $this->input->post("1_3_18") ? "1" : "0",
+					"inits" => $this->input->post("1_3_18_inits")
+				),
+				"1_3_19" => array(
+					"value" => $this->input->post("1_3_19") ? "1" : "0",
+					"inits" => $this->input->post("1_3_19_inits")
+				),
 			);
 
 			//Run the function

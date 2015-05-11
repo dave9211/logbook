@@ -105,134 +105,134 @@
               <tr>
                 <td>1.3.1</td>
                 <td>Fit Vacuum Bellows</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_1" id="1_2_1" value="1" <?php if($record_row['1_2_1']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_1_inits" id="1_2_1_inits" value="<?php echo $record_row['1_2_1_inits'];?>"></td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_1" id="1_3_1" value="1" <?php if($record_row['1_3_1']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_1_inits" id="1_3_1_inits" value="<?php echo $record_row['1_3_1_inits'];?>"></td>
               </tr>
 
               <tr>
                 <td>1.3.2</td>
                 <td>Drill Table Top</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_2" id="1_2_2" value="1" <?php if($record_row['1_2_2']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_2_inits" id="1_2_2_inits" value="<?php echo $record_row['1_2_2_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_2" id="1_3_2" value="1" <?php if($record_row['1_3_2']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_2_inits" id="1_3_2_inits" value="<?php echo $record_row['1_3_2_inits'];?>"</td>
               </tr>
               
               <tr>
                 <td>1.3.3</td>
                 <td>Inspect and Fit Table Top</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_3" id="1_2_3" value="1" <?php if($record_row['1_2_3']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_3_inits" id="1_2_3_inits" value="<?php echo $record_row['1_2_3_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_3" id="1_3_3" value="1" <?php if($record_row['1_3_3']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_3_inits" id="1_3_3_inits" value="<?php echo $record_row['1_3_3_inits'];?>"</td>
               </tr>
 
               <td>1.3.4</td>
                 <td>Fit Chamber Assembly</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_5" id="1_2_5" value="1" <?php if($record_row['1_2_5']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_5_inits" id="1_2_5_inits" value="<?php echo $record_row['1_2_5_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_4" id="1_3_4" value="1" <?php if($record_row['1_3_4']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_4_inits" id="1_3_4_inits" value="<?php echo $record_row['1_3_4_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.5</td>
                 <td>Check Chamber Bolts</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_6" id="1_2_6" value="1" <?php if($record_row['1_2_6']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_6_inits" id="1_2_6_inits" value="<?php echo $record_row['1_2_6_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_5" id="1_3_5" value="1" <?php if($record_row['1_3_5']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_5_inits" id="1_3_5_inits" value="<?php echo $record_row['1_3_5_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.6</td>
                 <td>Fit Stage Hump</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_7" id="1_2_7" value="1" <?php if($record_row['1_2_7']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_7_inits" id="1_2_7_inits" value="<?php echo $record_row['1_2_7_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_6" id="1_3_6" value="1" <?php if($record_row['1_3_6']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_6_inits" id="1_3_6_inits" value="<?php echo $record_row['1_3_6_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.7</td>
                 <td>Check TIV Function</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_8" id="1_2_8" value="1" <?php if($record_row['1_2_8']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_8_inits" id="1_2_8_inits" value="<?php echo $record_row['1_2_8_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_7" id="1_3_7" value="1" <?php if($record_row['1_3_7']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_7_inits" id="1_3_7_inits" value="<?php echo $record_row['1_3_7_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.8</td>
                 <td>Fit TIV / TIV Spacer</td>
-                <td><b>TIV Serial Number</b><input type="text" class="object_centre serial_box" name="1_2_4_stage" value="<?php echo $record_row['1_2_4_stage'];?>" id="1_2_4_stage" placeholder="" ></td>
-                <td><input type="text" class="object_centre" name="1_2_4_stage_inits" id="1_2_4_stage_inits" value="<?php echo $record_row['1_2_4_stage_inits'];?>"</td>
+                <td><b>TIV Serial Number</b><input type="text" class="object_centre serial_box" name="1_3_8" value="<?php echo $record_row['1_3_8'];?>" id="1_3_8" placeholder="" ></td>
+                <td><input type="text" class="object_centre" name="1_3_8_inits" id="1_3_8_inits" value="<?php echo $record_row['1_3_8_inits'];?>"</td>
               </tr>
 
 
               <tr>
                 <td>1.3.9</td>
                 <td>Fit Rear Pumping Pipe Assembly</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_5" id="1_2_5" value="1" <?php if($record_row['1_2_5']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_5_inits" id="1_2_5_inits" value="<?php echo $record_row['1_2_5_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_9" id="1_3_9" value="1" <?php if($record_row['1_3_9']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_9_inits" id="1_3_9_inits" value="<?php echo $record_row['1_3_9_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.10</td>
                 <td>Fit Blank Plates</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_6" id="1_2_6" value="1" <?php if($record_row['1_2_6']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_6_inits" id="1_2_6_inits" value="<?php echo $record_row['1_2_6_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_10" id="1_3_10" value="1" <?php if($record_row['1_3_10']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_10_inits" id="1_3_10_inits" value="<?php echo $record_row['1_3_10_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.11</td>
                 <td>Assembly Turbo Pump Assembly</td>
-                <td><b>Turbo Pump Serial Number</b><input type="text" class="object_centre serial_box" name="1_2_4_stage" value="<?php echo $record_row['1_2_4_stage'];?>" id="1_2_4_stage" placeholder="" ></td>
-                <td><input type="text" class="object_centre" name="1_2_4_stage_inits" id="1_2_4_stage_inits" value="<?php echo $record_row['1_2_4_stage_inits'];?>"</td>
+                <td><b>Turbo Pump Serial Number</b><input type="text" class="object_centre serial_box" name="1_3_11" value="<?php echo $record_row['1_3_11'];?>" id="1_3_11" placeholder="" ></td>
+                <td><input type="text" class="object_centre" name="1_3_11_inits" id="1_3_11_inits" value="<?php echo $record_row['1_3_11_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.12</td>
                 <td>Fit Turbo Pump Assembly</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_7" id="1_2_7" value="1" <?php if($record_row['1_2_7']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_7_inits" id="1_2_7_inits" value="<?php echo $record_row['1_2_7_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_12" id="1_3_12" value="1" <?php if($record_row['1_3_12']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_12_inits" id="1_3_12_inits" value="<?php echo $record_row['1_3_12_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.13</td>
                 <td>Fit Valves and Gauges</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_8" id="1_2_8" value="1" <?php if($record_row['1_2_8']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_8_inits" id="1_2_8_inits" value="<?php echo $record_row['1_2_8_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_13" id="1_3_13" value="1" <?php if($record_row['1_3_13']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_13_inits" id="1_3_13_inits" value="<?php echo $record_row['1_3_13_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.14</td>
                 <td>Fit Air and Water In/Outputs on Rear Panel (Sigma Only)</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_9" id="1_2_9" value="1" <?php if($record_row['1_2_9']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_9_inits" id="1_2_9_inits" value="<?php echo $record_row['1_2_9_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_14" id="1_3_14" value="1" <?php if($record_row['1_3_14']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_14_inits" id="1_3_14_inits" value="<?php echo $record_row['1_3_14_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.15</td>
                 <td>Connect Air Valves (Sigma Only)</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_10" id="1_2_10" value="1" <?php if($record_row['1_2_10']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_10_inits" id="1_2_10_inits" value="<?php echo $record_row['1_2_10_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_15" id="1_3_15" value="1" <?php if($record_row['1_3_15']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_15_inits" id="1_3_15_inits" value="<?php echo $record_row['1_3_15_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.16</td>
                 <td>Connect Air Pipes</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_11" id="1_2_11" value="1" <?php if($record_row['1_2_11']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_11_inits" id="1_2_11_inits" value="<?php echo $record_row['1_2_11_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_16" id="1_3_16" value="1" <?php if($record_row['1_3_16']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_16_inits" id="1_3_16_inits" value="<?php echo $record_row['1_3_16_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.17</td>
                 <td>Connect Water Pipes (Sigma Only)</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_12" id="1_2_12" value="1" <?php if($record_row['1_2_12']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_12_inits" id="1_2_12_inits" value="<?php echo $record_row['1_2_12_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_17" id="1_3_17" value="1" <?php if($record_row['1_3_17']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_17_inits" id="1_3_17_inits" value="<?php echo $record_row['1_3_17_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.18</td>
                 <td>Fit Stage Assembly</td>
-                <td><b>Stage</b><input type="text" class="object_centre serial_box" name="1_2_4_stage" value="<?php echo $record_row['1_2_4_stage'];?>" id="1_2_4_stage" placeholder="" ></td>
-                <td><input type="text" class="object_centre" name="1_2_4_stage_inits" id="1_2_4_stage_inits" value="<?php echo $record_row['1_2_4_stage_inits'];?>"</td>
+                <td><b>Stage</b><input type="text" class="object_centre serial_box" name="1_3_18" value="<?php echo $record_row['1_3_18'];?>" id="1_3_18" placeholder="" ></td>
+                <td><input type="text" class="object_centre" name="1_3_18_inits" id="1_3_18_inits" value="<?php echo $record_row['1_3_18_inits'];?>"</td>
               </tr>
 
               <tr>
                 <td>1.3.19</td>
                 <td>Vac Test System</td>
-                <td><b>Complete?</b><input type="checkbox" name="1_2_13" id="1_2_13" value="1" <?php if($record_row['1_2_13']==1) echo 'checked="checked"';?>></td>
-                <td><input type="text" class="object_centre" name="1_2_13_inits" id="1_2_13_inits" value="<?php echo $record_row['1_2_13_inits'];?>"</td>
+                <td><b>Complete?</b><input type="checkbox" name="1_3_19" id="1_3_19" value="1" <?php if($record_row['1_3_19']==1) echo 'checked="checked"';?>></td>
+                <td><input type="text" class="object_centre" name="1_3_19_inits" id="1_3_19_inits" value="<?php echo $record_row['1_3_19_inits'];?>"</td>
               </tr>
 
 
