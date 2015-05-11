@@ -103,17 +103,96 @@ public function __construct()
 			//Redirect to Page 2
 			//header("Location: ".site_url('main_site/logbook_page2/') ."/" .$url_serial);
 		}
-		//else {
-			/*echo $url_serial;*/
-			/*Collects the record of the serial number defined in the page's url*/
-			$record_data['records'] = $this->user->get_data($url_serial);
+		/*echo $url_serial;*/
+		/*Collects the record of the serial number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_serial);
 
-			$page["page"]=1;
-			$this->load->view('header',$page);
-			$this->load->view('logbook_page1',$record_data);
-			$this->load->view('footer');
-		//}
+		$page["page"]=1;
+		$page['url_serial'] = $url_serial;
+		$this->load->view('header',$page);
+		$this->load->view('logbook_page1',$record_data);
+		$this->load->view('footer');
+
 	}
+
+
+	public function logbook_page2($url_serial)
+	{
+		//Run this code if the user has just pressed submit
+		if($this->input->post("submit"))
+		{
+			//Format the data for the update_info function
+			$data_to_update = array(
+				"1_1_1" => array(
+					"value" => $this->input->post("1_1_1") ? "1" : "0",
+					"inits" => $this->input->post("1_1_1_inits")
+				),
+				"1_1_2" => array(
+					"value" => $this->input->post("1_1_2") ? "1" : "0",
+					"inits" => $this->input->post("1_1_2_inits")
+				),
+				"1_1_3" => array(
+					"value" => $this->input->post("1_1_3"),
+					"inits" => $this->input->post("1_1_3_inits")
+				)
+			);
+
+			//Run the function
+			$this->user->update_info($url_serial, $data_to_update);
+
+			//Redirect to Page 2
+			//header("Location: ".site_url('main_site/logbook_page2/') ."/" .$url_serial);
+		}
+		/*echo $url_serial;*/
+		/*Collects the record of the serial number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_serial);
+
+		$page["page"]=2;
+		$page['url_serial'] = $url_serial;
+		$this->load->view('header',$page);
+		$this->load->view('logbook_page2',$record_data);
+		$this->load->view('footer');
+
+	}
+
+public function logbook_page3($url_serial)
+	{
+		//Run this code if the user has just pressed submit
+		if($this->input->post("submit"))
+		{
+			//Format the data for the update_info function
+			$data_to_update = array(
+				"1_1_1" => array(
+					"value" => $this->input->post("1_1_1") ? "1" : "0",
+					"inits" => $this->input->post("1_1_1_inits")
+				),
+				"1_1_2" => array(
+					"value" => $this->input->post("1_1_2") ? "1" : "0",
+					"inits" => $this->input->post("1_1_2_inits")
+				),
+				"1_1_3" => array(
+					"value" => $this->input->post("1_1_3"),
+					"inits" => $this->input->post("1_1_3_inits")
+				)
+			);
+
+			//Run the function
+			$this->user->update_info($url_serial, $data_to_update);
+
+		}
+		/*echo $url_serial;*/
+		/*Collects the record of the serial number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_serial);
+
+		$page["page"]=3;
+		$page['url_serial'] = $url_serial;
+		$this->load->view('header',$page);
+		$this->load->view('logbook_page3',$record_data);
+		$this->load->view('footer');
+
+	}
+
+
 
 /*
 	public function database()

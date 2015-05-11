@@ -52,10 +52,13 @@
 
             <li <?php if ($page==0) echo "class ='active'";?>><a href="<?php echo site_url('main_site/');?>">Home</a></li>
           <!--Page 1 Button-->
-            <li <?php if ($page==1) echo "class ='active'";?>><a href="<?php echo site_url('main_site/logbook_page1');?>">1.1 Pre Assembly</a></li>
-          <!--Page 2 Button-->
-            <li <?php if ($page==1) echo "class ='active'";?>><a href="<?php echo site_url('main_site/logbook_page2');?>">1.2 Takt 1 Assembly</a></li>
-          
+           <?php if(isset($url_serial)) { ?>
+              <li <?php if ($page==1) echo "class ='active'";?>><a href="<?php echo site_url('main_site/logbook_page1/'.$url_serial);?>">1.1 Pre Assembly</a></li>
+            <!--Page 2 Button-->
+              <li <?php if ($page==2) echo "class ='active'";?>><a href="<?php echo site_url('main_site/logbook_page2/'.$url_serial);?>">1.2 Takt 1 Assembly</a></li>
+            <!--Page 2 Button-->
+              <li <?php if ($page==3) echo "class ='active'";?>><a href="<?php echo site_url('main_site/logbook_page3/'.$url_serial);?>">1.3 Takt 2 Assembly</a></li>
+          <?php } ?>
               
               </ul>
             </li>
