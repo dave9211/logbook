@@ -103,16 +103,15 @@ public function __construct()
 			//Redirect to Page 2
 			header("Location: ".site_url('main_site/logbook_page2/') ."/" .$url_serial);
 		}
-		else {
-			/*echo $url_serial;*/
-			/*Collects the record of the serial number defined in the page's url*/
-			$record_data['records'] = $this->user->get_data($url_serial);
+		/*echo $url_serial;*/
+		/*Collects the record of the serial number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_serial);
 
-			$page["page"]=1;
-			$this->load->view('header',$page);
-			$this->load->view('logbook_page1',$record_data);
-			$this->load->view('footer');
-		}
+		$page["page"]=1;
+		$page['url_serial'] = $url_serial;
+		$this->load->view('header',$page);
+		$this->load->view('logbook_page1',$record_data);
+		$this->load->view('footer');
 	}
 
 /*
