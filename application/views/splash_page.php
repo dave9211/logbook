@@ -58,14 +58,14 @@
         <!-- Input Form -->
       <form action="<?php echo site_url('main_site/splash_page_continue');?>" method="post" target="_self" accept-charset="UTF-8" autocomplete="off">
 
-              <!-- Dropdown of all Serial Numbers in Database-->
+              <!-- Dropdown of all Order Numbers in Database-->
               <div>
-                <label for="existing_serial">Existing Serial:</label>
-                <select name="exisiting_serial" style="width:200px;" onchange="document.location.href='<?php echo site_url('main_site/logbook_page1/');?><?php echo "/";?>'+this[selectedIndex].value">
+                <label for="existing_order">Existing Order:</label>
+                <select name="exisiting_order" style="width:200px;" onchange="document.location.href='<?php echo site_url('main_site/logbook_page1/');?><?php echo "/";?>'+this[selectedIndex].value">
                     <option selected="selected" value="">--- Select ---</option>
                               <?php
-                                  foreach($serials->result_array() as $row) { ?>
-                                  <option value="<?= $row['serial_number'] ?>"><?= $row['serial_number'] ?></option>
+                                  foreach($orders->result_array() as $row) { ?>
+                                  <option value="<?= $row['order_number'] ?>"><?= $row['order_number'] ?></option>
                               <?php
                                 } ?>
                 </select>
@@ -74,10 +74,17 @@
               <p> <b> OR </b></p>
               <br>
 
+              <!-- Order Number Input Box-->
+              <div>
+                  <label for="new_order_number">New Order Number:</label>
+                  <input type="text" class="object_centre" name="new_order_number" value="" id="new_order_number" >
+              </div> 
+
              <!-- Serial Number Input Box-->
               <div>
                   <label for="new_serial_number">New Serial Number:</label>
-                  <input type="text" class="object_centre" name="new_serial_number" value="" id="new_serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23">
+                  <!--<input type="text" class="object_centre" name="new_serial_number" value="" id="new_serial_number" placeholder=" 01.23" pattern="\d{2}\.\d{2}" title="01.23">-->
+                  <input type="text" class="object_centre" name="new_serial_number" value="" id="new_serial_number" >
               </div> 
 
 

@@ -46,8 +46,14 @@
         	display: block;
         }
 
+        .order_box{
+          width: 200px;
+        }
         .serial_box{
           width: 150px;
+          text-align: center;
+          margin-left:auto; margin-right: auto;
+          display: block;
         }
 
         .button_size{
@@ -56,7 +62,8 @@
 
       </style>
 
-	<!--This line turns the 1row SQL result into an array that we can reference in the body of the page-->
+	<!--This line turns the 1row SQL result into an array that we can reference in the body of the page
+      Basically, $records is all of the data with the order number specified in the URL. $record_row is the same data, in a nicer array format-->
 	<?php $record_row = $records->row_array();?>
 
 <!-- Content of page -->
@@ -68,9 +75,15 @@
       	<h4>Remember to press "Save Changes" so that the logbook is saved</h4>
       	<br>
 
+        <!-- Display Order Number-->
+        <b>Active Order Number</b><br>
+        <input type="text" name="active_order_number" class="order_box" value="<?php echo $record_row['order_number'];?>" readonly>
+        <br>
+        <br>
+
         <!-- Display Serial Number-->
       	<b>Active Serial Number</b><br>
-      	<input type="text" name="active_serial_number" value="<?php echo $record_row['serial_number'];?>" readonly>
+      	<input type="text" name="active_serial_number" class="order_box" value="<?php echo $record_row['serial_number'];?>" readonly>
       	<br>
       	<br>
 
@@ -126,7 +139,7 @@
 	</form>
         <br>
   <!-- Continue Button-->
-             <a href="<?php echo site_url('main_site/logbook_page2/');?><?php echo "/";?><?php echo $record_row['serial_number'];?>"><button type="button" class="btn btn-info button_size">Continue</button></a>
+             <a href="<?php echo site_url('main_site/logbook_page2/');?><?php echo "/";?><?php echo $record_row['order_number'];?>"><button type="button" class="btn btn-info button_size">Continue</button></a>
 
 
        <!-- Progress Bar

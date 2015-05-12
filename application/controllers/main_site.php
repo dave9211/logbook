@@ -34,8 +34,8 @@ public function __construct()
 	 */
 	public function index()
 	{
-		/*This retrieves the serial numbers from the database so they can be passed to the splash page*/
-		$data['serials'] = $this->user->serials_lookup();
+		/*This retrieves the order numbers from the database so they can be passed to the splash page*/
+		$data['orders'] = $this->user->orders_lookup();
 		/*For the navbar, so it knows to highlight the home page*/
 		$page["page"]=0;
 		$this->load->view('header',$page);
@@ -46,29 +46,33 @@ public function __construct()
 
 	public function splash_page_continue(){
 
+		$existing_order = $this->input->post('existing_order');
 		$existing_serial = $this->input->post('existing_serial');
+		$new_order_number = $this->input->post('new_order_number');
 		$new_serial_number = $this->input->post('new_serial_number');
 		$new_system_type = $this->input->post('new_system_type');
+		echo $existing_order;
 		echo $existing_serial;
+		echo $new_order_number;
 		echo $new_serial_number;
 		echo $new_system_type;
 
 		/*An existing Serial has been selected from the dropdown - load that record*/
-		if($existing_serial != ""){
-					$path = site_url('main_site/logbook_page1/') ."/" .$existing_serial;
+		if($existing_order != ""){
+					$path = site_url('main_site/logbook_page1/') ."/" .$existing_order;
 					header("location:".$path);
 		}
 
-			/*Neither an exising serial has been selected, nor a new one has been entered, just reload the splashpage*/
+			/*Neither an exising order has been selected, nor a new one has been entered, just reload the splashpage*/
 		else{
-			if($new_serial_number == ""){
+			if($new_order_number == ""){
 				$path = site_url('main_site/');
 				header("location:".$path);
 			}
-				/*No existing serial number selected, but a new one's been entered - create a new record and go to that page*/
+				/*No existing order number selected, but a new one's been entered - create a new record and go to that page*/
 				else{
 					echo "loc2";
-				/*Create record and return the new serial number*/
+				/*Create record and return the new order number*/
 				$new_id = $this->user->new_record();
 				$path = site_url('main_site/logbook_page1/') ."/" .$new_id;
 				header("location:".$path);
@@ -76,7 +80,7 @@ public function __construct()
 		}
 	}
 
-	public function logbook_page1($url_serial)
+	public function logbook_page1($url_order)
 	{
 		//Run this code if the user has just pressed submit
 		if($this->input->post("submit"))
@@ -98,14 +102,14 @@ public function __construct()
 			);
 
 			//Run the function
-			$this->user->update_info($url_serial, $data_to_update);
+			$this->user->update_info($url_order, $data_to_update);
 		}
-		/*echo $url_serial;*/
+		/*echo $url_order;*/
 		/*Collects the record of the serial number defined in the page's url*/
-		$record_data['records'] = $this->user->get_data($url_serial);
+		$record_data['records'] = $this->user->get_data($url_order);
 
 		$page["page"]=1;
-		$page['url_serial'] = $url_serial;
+		$page['url_order'] = $url_order;
 		$this->load->view('header',$page);
 		$this->load->view('logbook_page1',$record_data);
 		$this->load->view('footer');
@@ -113,7 +117,7 @@ public function __construct()
 	}
 
 
-	public function logbook_page2($url_serial)
+	public function logbook_page2($url_order)
 	{
 		//Run this code if the user has just pressed submit
 		if($this->input->post("submit"))
@@ -191,24 +195,24 @@ public function __construct()
 				);
 
 			//Run the function
-			$this->user->update_info($url_serial, $data_to_update);
+			$this->user->update_info($url_order, $data_to_update);
 
 			//Redirect to Page 2
-			//header("Location: ".site_url('main_site/logbook_page2/') ."/" .$url_serial);
+			//header("Location: ".site_url('main_site/logbook_page2/') ."/" .$url_order);
 		}
-		/*echo $url_serial;*/
-		/*Collects the record of the serial number defined in the page's url*/
-		$record_data['records'] = $this->user->get_data($url_serial);
+		/*echo $url_order;*/
+		/*Collects the record of the order number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_order);
 
 		$page["page"]=2;
-		$page['url_serial'] = $url_serial;
+		$page['url_order'] = $url_order;
 		$this->load->view('header',$page);
 		$this->load->view('logbook_page2',$record_data);
 		$this->load->view('footer');
 
 	}
 
-public function logbook_page3($url_serial)
+public function logbook_page3($url_order)
 	{
 		//Run this code if the user has just pressed submit
 		if($this->input->post("submit"))
@@ -284,7 +288,7 @@ public function logbook_page3($url_serial)
 					"inits" => $this->input->post("1_3_17_inits")
 				),
 				"1_3_18" => array(
-					"value" => $this->input->post("1_3_18") ? "1" : "0",
+					"value" => $this->input->post("1_3_18"),
 					"inits" => $this->input->post("1_3_18_inits")
 				),
 				"1_3_19" => array(
@@ -294,15 +298,15 @@ public function logbook_page3($url_serial)
 			);
 
 			//Run the function
-			$this->user->update_info($url_serial, $data_to_update);
+			$this->user->update_info($url_order, $data_to_update);
 
 		}
-		/*echo $url_serial;*/
-		/*Collects the record of the serial number defined in the page's url*/
-		$record_data['records'] = $this->user->get_data($url_serial);
+		/*echo $url_order;*/
+		/*Collects the record of the order number defined in the page's url*/
+		$record_data['records'] = $this->user->get_data($url_order);
 
 		$page["page"]=3;
-		$page['url_serial'] = $url_serial;
+		$page['url_order'] = $url_order;
 		$this->load->view('header',$page);
 		$this->load->view('logbook_page3',$record_data);
 		$this->load->view('footer');

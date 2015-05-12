@@ -46,9 +46,12 @@
         	display: block;
         }
 
+        .order_box{
+          width: 200px;
+        }
         .serial_box{
           width: 150px;
-          text-align: right;
+          text-align: center;
           margin-left:auto; margin-right: auto;
           display: block;
         }
@@ -71,9 +74,15 @@
       	<h4>Remember to press "Save Changes" so that the logbook is saved</h4>
       	<br>
 
+        <!-- Display Order Number-->
+        <b>Active Order Number</b><br>
+        <input type="text" name="active_order_number" class="order_box" value="<?php echo $record_row['order_number'];?>" readonly>
+        <br>
+        <br>
+
         <!-- Display Serial Number-->
       	<b>Active Serial Number</b><br>
-      	<input type="text" name="active_serial_number" value="<?php echo $record_row['serial_number'];?>" readonly>
+      	<input type="text" name="active_serial_number" class="order_box" value="<?php echo $record_row['serial_number'];?>" readonly>
       	<br>
       	<br>
 
@@ -225,7 +234,7 @@
 
         <br>
              <!-- Continue Button-->
-             <a href="<?php echo site_url('main_site/logbook_page3/');?><?php echo "/";?><?php echo $record_row['serial_number'];?>"><button type="button" class="btn btn-info button_size">Continue</button></a>
+             <a href="<?php echo site_url('main_site/logbook_page3/');?><?php echo "/";?><?php echo $record_row['order_number'];?>"><button type="button" class="btn btn-info button_size">Continue</button></a>
         <br>
         <br>
 
